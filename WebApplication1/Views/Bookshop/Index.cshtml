@@ -7,6 +7,10 @@
 <div>
 	<h1>Benvenuto su Epibook - La tua libreria personalizzata! </h1>
 </div>
+
+<div>
+	<a class="btn btn-success mb-3" asp-controller="Bookshop" asp-action="Add">Add Book</a>
+</div>
 <div class=" container-fluid">
 	<div class="row row-cols-md-4 row-cols-lg-5 mx-5">
 		@if (Model.Books != null)

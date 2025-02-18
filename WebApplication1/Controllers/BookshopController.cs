@@ -28,5 +28,25 @@ namespace WebApplication1.Controllers
             };
             return View(BookList);
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(AddBook item)
+         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var formattedPrice = Math.Round(item.Price, 2);
+            var newBook = new Book(item.Title!, item.Author!, item.Genre!, formattedPrice, item.Img!);
+
+            listbook.Add(newBook);
+            return RedirectToAction("Index");
+        }
     }
 }

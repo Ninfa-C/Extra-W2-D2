@@ -1,0 +1,42 @@
+﻿@model AddBook
+
+@{
+    ViewData["title"] = "Aggiungi libro";
+}
+<form class="mt-4" asp-asp-controller="Bookshop" asp-action="Add">
+    <div class="mb-3">
+
+        <label for="userName" class="form-label">Titolo</label>
+        <input type="text" class="form-control" placeholder="Inserisci il titolo" required="" autocomplete="on" asp-for="Title">
+    </div>
+
+    <div class="mb-3">
+        <label for="surName" class="form-label">Autore</label>
+        <input type="text" class="form-control" placeholder="Inserisci l'autore" required="" autocomplete="on" asp-for="Author">
+    </div>
+
+    <div class="mb-3">
+        <label for="surName" class="form-label">Genere</label>
+        <input type="text" class="form-control" placeholder="Inserisci il genere" required="" autocomplete="on" asp-for="Genre">
+    </div>
+
+    <div class="mb-3">
+        <label for="surName" class="form-label">Prezzo</label>
+        <input type="number" class="form-control" placeholder="Inserisci il prezzo" required="" autocomplete="on" asp-for="Price" step="any">
+    </div>
+
+    <div class="mb-3">
+        <label for="surName" class="form-label">Immagine copertina</label>
+        <input type="text" class="form-control" placeholder="Inserisci l'URL dell'immagine" required="" autocomplete="on" asp-for="Img">
+    </div>
+
+
+    <button type="submit" class="btn btn-dark">Aggiungi</button>
+    <!--<button type="submit" class="btn btn-dark" id="remove">Rimuovi</button>-->
+
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
